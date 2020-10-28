@@ -1,23 +1,16 @@
-import logo from './logo.svg';
+import Product from './components/Product/Product';
 import './App.css';
 
 function App() {
+  const products = [{title: 'shampoo', price: 15, description: "this is a shampoo"}]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello Shopify</h1>
+      <div>
+        {products.map(product => (
+          <Product product={product} />
+        ))}
+      </div>
     </div>
   );
 }
